@@ -1,7 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import sys
-import os
+from pathlib import PurePath, Path
 import time
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
@@ -11,7 +10,10 @@ import asyncio
 import config
 
 program_start_time = datetime.now()
-program_name = os.path.basename(__file__)
+
+program_path = PurePath(__file__)
+program_name = program_path.name
+program_dir = str(program_path.parent)
 
 TZ = config.TZ
 
@@ -24,6 +26,10 @@ async def main():
     amount_of_time = 3
     output_sync_func = await loop.run_in_executor(None, sync_func_sleep, amount_of_time)
 
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
 program_end_time = datetime.now()
 program_delta_time = program_end_time - program_start_time
-print(f"--- {program_name} took {program_delta_time}")
+print(f"--- Program {program_name} took {program_delta_time}")
