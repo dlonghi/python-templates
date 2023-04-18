@@ -25,5 +25,5 @@ async def main():
     output_sync_func = await loop.run_in_executor(None, sync_func_sleep, amount_of_time)
 
 program_end_time = datetime.now()
-program_delta_time = program_end_time - program_program_start_time
+program_delta_time = program_end_time - program_start_time
 print(f"--- {program_name} took {program_delta_time}")
