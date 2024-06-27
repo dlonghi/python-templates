@@ -1,0 +1,8 @@
+
+TELEGRAM_TOKEN = 'xxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+TELEGRAM_CHAT_ID = '-xxxxxxxxxx'
+
+CAMERAS = [
+  {'hostname': 'xxxx-Metar-Ptz', 'url': 'http://10.123.218.28/onvif/device_service'},
+  {'hostname': 'yyyy-Metar-Ptz', 'url': 'http://10.123.110.169/onvif/device_service'},
+]
